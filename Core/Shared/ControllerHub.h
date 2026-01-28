@@ -4,11 +4,11 @@
 #include "Shared/BaseControlDevice.h"
 #include "Shared/InputHud.h"
 #include "Shared/IControllerHub.h"
-#include "SNES/Input/SnesController.h"
-#include "SNES/Input/SnesMouse.h"
+// #include "SNES/Input/SnesController.h"
+// #include "SNES/Input/SnesMouse.h"
 #include "NES/Input/NesController.h"
-#include "PCE/Input/PceController.h"
-#include "PCE/Input/PceAvenuePad6.h"
+// #include "PCE/Input/PceController.h"
+// #include "PCE/Input/PceAvenuePad6.h"
 #include "Utilities/Serializer.h"
 #include "Utilities/StringUtilities.h"
 
@@ -69,20 +69,20 @@ public:
 					_ports[i].reset(new NesController(emu, controllers[i].Type, 0, controllers[i].Keys));
 					break;
 
-				case ControllerType::SnesController:
-					_ports[i].reset(new SnesController(emu, 0, controllers[i].Keys));
+				// case ControllerType::SnesController:
+					// _ports[i].reset(new SnesController(emu, 0, controllers[i].Keys));
 					break;
 
-				case ControllerType::SnesMouse:
-					_ports[i].reset(new SnesMouse(emu, 0, controllers[i].Keys));
+				// case ControllerType::SnesMouse:
+					// _ports[i].reset(new SnesMouse(emu, 0, controllers[i].Keys));
 					break;
 
-				case ControllerType::PceController:
-					_ports[i].reset(new PceController(emu, 0, controllers[i].Keys));
+				// case ControllerType::PceController:
+					// _ports[i].reset(new PceController(emu, 0, controllers[i].Keys));
 					break;
 
-				case ControllerType::PceAvenuePad6:
-					_ports[i].reset(new PceAvenuePad6(emu, 0, controllers[i].Keys));
+				// case ControllerType::PceAvenuePad6:
+					// _ports[i].reset(new PceAvenuePad6(emu, 0, controllers[i].Keys));
 					break;
 			}
 		}

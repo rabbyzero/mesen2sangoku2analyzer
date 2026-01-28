@@ -3,6 +3,7 @@
 #include "NES/BaseMapper.h"
 #include "NES/Mappers/Audio/Namco163Audio.h"
 #include "NES/NesConsole.h"
+#include "NES/NesCpu.h"
 #include "Shared/BatteryManager.h"
 
 enum class NamcoVariant

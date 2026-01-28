@@ -135,7 +135,8 @@ else
 endif
 
 
-CORESRC := $(shell find Core -name '*.cpp' ! -path 'Core/GBA/*' ! -path 'Core/Gameboy/*' ! -path 'Core/PCE/*' ! -path 'Core/SMS/*' ! -path 'Core/SNES/*' ! -path 'Core/WS/*')
+CORESRC := $(shell find Core -name '*.cpp' ! -path 'Core/GBA/*' ! -path 'Core/Gameboy/*' ! -path 'Core/PCE/*' ! -path 'Core/SMS/*' ! -path 'Core/SNES/*' ! -path 'Core/WS/*' ! -path 'Core/NES/Mappers/*' ! -name 'ExpressionEvaluator.Snes.cpp' ! -name 'ExpressionEvaluator.Spc.cpp' ! -name 'ExpressionEvaluator.Gsu.cpp' ! -name 'ExpressionEvaluator.Cx4.cpp' ! -name 'ExpressionEvaluator.NecDsp.cpp' ! -name 'ExpressionEvaluator.St018.cpp' ! -name 'ExpressionEvaluator.Gameboy.cpp' ! -name 'ExpressionEvaluator.Pce.cpp' ! -name 'ExpressionEvaluator.Sms.cpp' ! -name 'ExpressionEvaluator.Gba.cpp' ! -name 'ExpressionEvaluator.Ws.cpp')
+CORESRC += Core/NES/Mappers/NSF/NsfMapper.cpp Core/NES/Mappers/VsSystem/VsControlManager.cpp Core/NES/Mappers/FDS/Fds.cpp Core/NES/Mappers/FDS/FdsAudio.cpp Core/NES/Mappers/FDS/FdsInputButtons.cpp
 COREOBJ := $(CORESRC:.cpp=.o)
 
 UTILSRC := $(shell find Utilities -name '*.cpp' -o -name '*.c')

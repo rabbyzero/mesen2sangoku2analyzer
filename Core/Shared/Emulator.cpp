@@ -29,14 +29,14 @@
 #include "Shared/Interfaces/IBarcodeReader.h"
 #include "Shared/Interfaces/ITapeRecorder.h"
 #include "Shared/BaseControlManager.h"
-#include "SNES/SnesConsole.h"
+// #include "SNES/SnesConsole.h"
 #include "SNES/SnesDefaultVideoFilter.h"
 #include "NES/NesConsole.h"
-#include "Gameboy/Gameboy.h"
-#include "PCE/PceConsole.h"
-#include "SMS/SmsConsole.h"
-#include "GBA/GbaConsole.h"
-#include "WS/WsConsole.h"
+// #include "Gameboy/Gameboy.h"
+// #include "PCE/PceConsole.h"
+// #include "SMS/SmsConsole.h"
+// #include "GBA/GbaConsole.h"
+// #include "WS/WsConsole.h"
 #include "Debugger/Debugger.h"
 #include "Debugger/BaseEventManager.h"
 #include "Debugger/DebugTypes.h"
@@ -562,12 +562,12 @@ void Emulator::InitConsole(unique_ptr<IConsole>& newConsole, ConsoleMemoryInfo o
 void Emulator::TryLoadRom(VirtualFile& romFile, LoadRomResult& result, unique_ptr<IConsole>& console, bool useFileSignature)
 {
 	TryLoadRom<NesConsole>(romFile, result, console, useFileSignature);
-	TryLoadRom<SnesConsole>(romFile, result, console, useFileSignature);
-	TryLoadRom<Gameboy>(romFile, result, console, useFileSignature);
-	TryLoadRom<PceConsole>(romFile, result, console, useFileSignature);
-	TryLoadRom<SmsConsole>(romFile, result, console, useFileSignature);
-	TryLoadRom<GbaConsole>(romFile, result, console, useFileSignature);
-	TryLoadRom<WsConsole>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<SnesConsole>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<Gameboy>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<PceConsole>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<SmsConsole>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<GbaConsole>(romFile, result, console, useFileSignature);
+// 	TryLoadRom<WsConsole>(romFile, result, console, useFileSignature);
 }
 
 template<typename T>
@@ -967,7 +967,7 @@ DeserializeResult Emulator::Deserialize(istream& in, uint32_t fileFormatVersion,
 BaseVideoFilter* Emulator::GetVideoFilter(bool getDefaultFilter)
 {
 	shared_ptr<IConsole> console = GetConsole();
-	return console ? console->GetVideoFilter(getDefaultFilter) : new SnesDefaultVideoFilter(this);
+// 	return console ? console->GetVideoFilter(getDefaultFilter) : new SnesDefaultVideoFilter(this);
 }
 
 void Emulator::GetScreenRotationOverride(uint32_t& rotation)
@@ -1170,7 +1170,7 @@ void Emulator::BreakIfDebugging(CpuType sourceCpu, BreakSource source)
 }
 
 template void Emulator::AddDebugEvent<CpuType::Snes>(DebugEventType evtType);
-template void Emulator::AddDebugEvent<CpuType::Gameboy>(DebugEventType evtType);
+// template void Emulator::AddDebugEvent<CpuType::Gameboy>(DebugEventType evtType);
 template void Emulator::AddDebugEvent<CpuType::Nes>(DebugEventType evtType);
 template void Emulator::AddDebugEvent<CpuType::Pce>(DebugEventType evtType);
 
