@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Mesen (Release)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Mesen (Release)",
+            "program": "${workspaceFolder}/bin/linux-x64/Release/linux-x64/publish/Mesen",
+            "args": [],
+            "cwd": "${workspaceFolder}/bin/linux-x64/Release/linux-x64/publish",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch Mesen (Debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Mesen (Debug)",
+            "program": "${workspaceFolder}/bin/linux-x64/Debug/linux-x64/publish/Mesen",
+            "args": [],
+            "cwd": "${workspaceFolder}/bin/linux-x64/Debug/linux-x64/publish",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}
