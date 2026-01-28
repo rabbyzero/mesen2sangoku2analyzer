@@ -135,7 +135,7 @@ else
 endif
 
 
-CORESRC := $(shell find Core -name '*.cpp')
+CORESRC := $(shell find Core -name '*.cpp' ! -path 'Core/GBA/*' ! -path 'Core/Gameboy/*' ! -path 'Core/PCE/*' ! -path 'Core/SMS/*' ! -path 'Core/SNES/*' ! -path 'Core/WS/*')
 COREOBJ := $(CORESRC:.cpp=.o)
 
 UTILSRC := $(shell find Utilities -name '*.cpp' -o -name '*.c')
